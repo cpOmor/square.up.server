@@ -1,9 +1,10 @@
 import express from 'express'
 import path from 'path'
-import { fileURLToPath } from 'url'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+// In CommonJS, __filename is globally available
+// For TypeScript, we'll use __dirname from commonjs
+declare const __filename: string
+declare const __dirname: string
 
 const app = express()
 
